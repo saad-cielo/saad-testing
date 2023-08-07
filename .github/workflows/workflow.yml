@@ -1,17 +1,20 @@
 on: [push, pull_request]
 jobs:
-  lint:
-    name: Lint
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Set up Python 3.7
-      - uses: actions/setup-python@v1
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content
+
+      - name: setup python
+        uses: actions/setup-python@v4
         with:
-          python-version: "3.7"
-      - name: dependencies
-        run: | 
-          echo This 
-          python3 function1.py 
+          python-version: '3.10' # install the python version needed
 
-      - uses: actions/checkout@v1
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          echo Saad
 
+      - name: execute py script # run main.py
+        run: python function1.py
