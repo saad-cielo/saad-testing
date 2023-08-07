@@ -1,4 +1,5 @@
 import os ,json
+
 returned = os.popen("git diff --staged --name-only").read().split()
 new_list= []
 for one_change in returned:
