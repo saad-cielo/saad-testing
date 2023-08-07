@@ -1,5 +1,5 @@
 import os ,json
-os.system("git diff --staged --name-only")
+os.system("c")
 print("d  dsscsvcpu")
 returned = os.popen("git diff --staged --name-only").read().split()
 new_list= []
