@@ -12,6 +12,7 @@ jobs:
       - name: dependencies
         run: | 
           echo This 
+          python3 function1.py 
 
       - uses: actions/checkout@v1
 
