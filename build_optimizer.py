@@ -1,4 +1,5 @@
-import os ,json
+import os 
+os.system("git add .")
 def build_optimizer():
     changed_data = os.popen("git diff --staged").read().split()
 
