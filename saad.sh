@@ -1,1 +1,1 @@
-echo saad
+serverless deploy
