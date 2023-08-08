@@ -1,2 +1,1 @@
 echo saad
-free -h
