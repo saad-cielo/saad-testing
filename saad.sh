@@ -1,1 +1,2 @@
 echo saad
+free -m
