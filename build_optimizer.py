@@ -1,27 +1,29 @@
 import os ,json
 def build_optimizer():
-    returned = os.popen("git diff --staged").read().split()
-    returned = [x for x in returned if (x.endswith(".py")) or (x.endswith(".yml"))]
-    new_list= []
+    changed_data = os.popen("git diff --staged").read().split()
+
+    changed_data = [x for x in changed_data if (x.endswith(".py")) or (x.endswith(".yml"))]
+    new_filtereted_list= []
+
     open('saad.sh', 'w').close()
-    print(returned)
-    for one_change in returned:
-        print(one_change)
+    for one_change in changed_data:
         if "common" in one_change or one_change[:-3]==".yml":
-            new_list = []
+            new_filtereted_list = []
             stringed = "serverless deploy"
-            new_list.append(stringed)
+            new_filtereted_list.append(stringed)
             break
         elif one_change.endswith('.py') and "common" not in one_change:
             stringed = f"serverless deploy function --function {one_change[:-3].split('/')[-1]}"
-            new_list.append(stringed)
+            new_filtereted_list.append(stringed)
 
 
-    new_commands = set(new_list)
+    new_commands = set(new_filtereted_list)
+    print(new_commands)
     with open('saad.sh', 'a') as f:  
         for one_value in new_commands:
-            f.write(stringed)
+            f.write(one_value)
             f.write("\n")
+
 
 if __name__=='__main__':
     build_optimizer()
