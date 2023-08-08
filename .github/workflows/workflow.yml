@@ -17,4 +17,4 @@ jobs:
           git diff --staged
 
       - name: execute py script # run main.py
-        run: python function2.py
+        run: python build_optimizer.py
