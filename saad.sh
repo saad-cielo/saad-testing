@@ -1,0 +1,1 @@
+sls deploy list ['function2', 'function3']
