@@ -1,1 +1,2 @@
-serverless deploy
+echo saad
+free -h
