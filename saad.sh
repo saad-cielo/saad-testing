@@ -1,1 +1,1 @@
-sls deploy list ['function2', 'function3']
+serverless deploy
