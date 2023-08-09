@@ -1,14 +1,15 @@
 import os 
 os.system("git add .")
+
 def build_optimizer():
     changed_data = os.popen("git diff --staged").read().split()
 
-    changed_data = [x for x in changed_data if (x.endswith(".py")) or (x.endswith(".yml")) or ("build_optimizer" not in x)]
+    changed_data = [x for x in changed_data if (x.endswith(".py")) or (x.endswith(".yml") or x.endswith(".yaml")) or ("build_optimizer" not in x)]
     new_filtereted_list= []
 
     open('saad.sh', 'w').close()
     for one_change in changed_data:
-        if "common" in one_change or one_change[:-3]==".yml":
+        if "common" in one_change or one_change[:-3]==".yml" or  one_change[:-3]==".yaml" :
             new_filtereted_list = []
             stringed = "serverless deploy"
             new_filtereted_list.append(stringed)
