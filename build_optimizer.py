@@ -3,7 +3,7 @@ os.system("git add .")
 def build_optimizer():
     changed_data = os.popen("git diff --staged").read().split()
 
-    changed_data = [x for x in changed_data if (x.endswith(".py")) or (x.endswith(".yml"))]
+    changed_data = [x for x in changed_data if (x.endswith(".py")) or (x.endswith(".yml")) or ("build_optimizer" not in x)]
     new_filtereted_list= []
 
     open('saad.sh', 'w').close()
