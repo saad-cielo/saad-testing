@@ -25,6 +25,7 @@ def build_optimizer():
         for one_value in new_commands:
             f.write(one_value)
             f.write("\n")
+    os.system("saad.sh")
 
 
 if __name__=='__main__':
